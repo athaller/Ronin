@@ -1,0 +1,10 @@
+fake-useragent==0.0.7
+pybloom==1.1
+python-dateutil==2.4.1
+Scrapy==0.24.4
+service-identity==14.0.0
+python-daemon==2.0.5
+pytest==2.7.0
+unittest2==1.0.1
+boto==2.36.0
+requests==2.6.0

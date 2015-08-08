@@ -1,0 +1,29 @@
+{
+    "source":"indicine",
+    "allowed_domains": ["indicine.com"],
+    "start_urls": [
+        "http://www.indicine.com/",
+        "http://www.indicine.com/in/bollywood/news/"
+    ],
+    "rules": [
+        {
+            "allow": [".+/movies/bollywood/.+"],
+            "deny": ["(.+collections.+|.+trailer.+|.+box-office.+)",".*comment-page-.*", ".*#comments"],
+            "follow": true,
+            "use_content": true
+        },
+        {
+            "allow": [".+in/bollywood/news/.+"],
+            "follow": true,
+            "use_content": false
+        }
+    ],
+    "xpaths": {
+        "title": ["//h1[@class='entry-title']/text()"],
+        "date": ["//meta[@property='article:published_time']/@content"],
+        "content": ["//div[@class='entry-content']/p[descendant-or-self::text()]"],
+        "image": ["//div[@class='entry-content']//img[not(@class='wp-polls-image')]/@src"]
+
+    }
+
+}

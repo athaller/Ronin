@@ -1,0 +1,24 @@
+{
+    "source":"bollywoodhungama",
+    "allowed_domains": ["bollywoodhungama.com"],
+    "start_urls": [
+        "http://www.bollywoodhungama.com/",
+        "http://www.bollywoodhungama.com/more/news/"
+    ],
+    "rules": [
+        {
+            "allow": ["./news/.+"],
+            "deny": [".+/(wallpapers?|images|moviemicro).*", ".+/(videos?).*"],
+            "follow": true,
+            "use_content": true
+        }
+    ],
+    "xpaths": {
+        "title": ["//div[@id='celeb_article_postview_tab']/h1/text()"],
+        "date": ["//span[@class='m9090 ctnormals']/text()"],
+        "content": ["//div[@class='ctwidth588 ctfl ctmt8 ctinline ctoverflow cfnt12']/p[descendant-or-self::text()]"],
+        "image": ["//div[@class='ctwidth588 ctfl ctmt8 ctinline ctoverflow cfnt12']//img/@src"]
+
+    }
+
+}

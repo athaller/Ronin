@@ -1,0 +1,24 @@
+{
+    "source": "filmfare",
+    "allowed_domains": ["filmfare.com"],
+    "start_urls": [
+        "http://www.filmfare.com/news/"
+    ],
+    "rules": [{
+        "allow": ["news\\d+"],
+        "follow": true,
+        "use_content": false
+    }, {
+        "allow": ["news/.*html"],
+        "follow": true,
+        "use_content": true
+    }],
+    "xpaths": {
+        "title": ["//title/text()"],
+        "date": ["//span[@class='time']/span/text()"],
+        "content": ["//div[@class='upperBlk']/figure/p[descendant-or-self::text()]", "//div[@class='upperBlk']/figure/div[descendant-or-self::text()]"],
+        "image": ["//figure/img/@src"]
+
+    }
+
+}

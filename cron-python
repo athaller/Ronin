@@ -1,0 +1,5 @@
+# placed in /etc/cron.d
+# This is an docker environment variable that the script start.py need
+#
+
+0 0 * * * python /usr/src/app/start.py >> /var/log/scrapy.log
